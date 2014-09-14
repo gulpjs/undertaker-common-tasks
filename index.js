@@ -35,3 +35,5 @@ function CommonRegistry(){
 }
 
 util.inherits(CommonRegistry, DefaultRegistry);
+
+module.exports = CommonRegistry;
