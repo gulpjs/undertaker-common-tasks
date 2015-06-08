@@ -9,22 +9,33 @@ var gutil = require('gulp-util');
 var ecstatic = require('ecstatic');
 var DefaultRegistry = require('undertaker-registry');
 
-function CommonRegistry(){
+function CommonRegistry(opts){
   DefaultRegistry.call(this);
 
-  var port = 8080;
-  var buildDir = './build';
+  opts = opts || {};
+
+  this.config = {
+    port: opts.port || 8080,
+    buildDir: opts.buildDir || './build'
+  };
+}
+
+util.inherits(CommonRegistry, DefaultRegistry);
+
+CommonRegistry.prototype.init = function init(taker){
+  var port = this.config.port;
+  var buildDir = this.config.buildDir;
   var exists = fs.existsSync(buildDir);
 
   if(exists){
     throw new Error('Cannot initialize undertaker-common-tasks registry. `build/` directory exists.');
   }
 
-  this.set('clean', function(cb){
+  taker.set('clean', function(cb){
     del([buildDir], cb);
   });
 
-  this.set('serve', function(cb){
+  taker.set('serve', function(cb){
     http.createServer(
       ecstatic({ root: buildDir })
     ).listen(port, function(){
@@ -32,8 +43,6 @@ function CommonRegistry(){
       cb();
     });
   });
-}
-
-util.inherits(CommonRegistry, DefaultRegistry);
+};
 
 module.exports = CommonRegistry;

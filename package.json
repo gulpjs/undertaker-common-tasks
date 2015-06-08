@@ -20,6 +20,6 @@
     "del": "^0.1.3",
     "ecstatic": "^0.5.4",
     "gulp-util": "^3.0.1",
-    "undertaker-registry": "0.0.2"
+    "undertaker-registry": "0.0.3"
   }
 }
