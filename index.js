@@ -31,11 +31,11 @@ CommonRegistry.prototype.init = function init(taker){
     throw new Error('Cannot initialize undertaker-common-tasks registry. `build/` directory exists.');
   }
 
-  taker.set('clean', function(cb){
+  taker.task('clean', function(cb){
     del([buildDir], cb);
   });
 
-  taker.set('serve', function(cb){
+  taker.task('serve', function(cb){
     http.createServer(
       ecstatic({ root: buildDir })
     ).listen(port, function(){
