@@ -19,7 +19,7 @@
   "dependencies": {
     "del": "^2.0.2",
     "ecstatic": "^1.1.3",
-    "gulp-util": "^3.0.6",
+    "gulplog": "^1.0.0",
     "undertaker-registry": "0.0.3"
   }
 }
