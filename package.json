@@ -6,16 +6,13 @@
   "scripts": {
     "test": "lab -cv"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/phated/undertaker-common-tasks"
-  },
+  "repository": "gulpjs/undertaker-common-tasks",
   "author": "Blaine Bublitz <blaine@iceddev.com> (http://iceddev.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/phated/undertaker-common-tasks/issues"
+    "url": "https://github.com/gulpjs/undertaker-common-tasks/issues"
   },
-  "homepage": "https://github.com/phated/undertaker-common-tasks",
+  "homepage": "https://github.com/gulpjs/undertaker-common-tasks",
   "dependencies": {
     "del": "^2.0.2",
     "ecstatic": "^1.1.3",
