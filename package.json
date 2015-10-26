@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint . && jscs index.js",
-    "pretest": "npm run lint",
-    "test": "echo \"No test specified\""
+    "test": "npm run lint"
   },
   "repository": "gulpjs/undertaker-common-tasks",
   "author": "Blaine Bublitz <blaine@iceddev.com> (http://iceddev.com/)",
