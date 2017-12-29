@@ -1,6 +1,6 @@
 {
   "name": "undertaker-common-tasks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Proof-of-concept custom registry that pre-defines tasks",
   "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
   "contributors": [],
