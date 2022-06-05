@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a href="https://gulpjs.com">
     <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
   </a>
 </p>
 
 # undertaker-common-tasks
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Gitter chat][gitter-image]][gitter-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][ci-image]][ci-url] [![Coveralls Status][coveralls-image]][coveralls-url]
 
 Proof-of-concept custom registry that pre-defines tasks.
 
@@ -37,12 +37,14 @@ Constructor for the registry. Pass an instance of this registry to `gulp.registr
 
 MIT
 
-[downloads-image]: http://img.shields.io/npm/dm/undertaker-common-tasks.svg
-[npm-url]: https://npmjs.org/package/undertaker-common-tasks
-[npm-image]: http://img.shields.io/npm/v/undertaker-common-tasks.svg
+<!-- prettier-ignore-start -->
+[downloads-image]: https://img.shields.io/npm/dm/undertaker-common-tasks.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/undertaker-common-tasks
+[npm-image]: https://img.shields.io/npm/v/undertaker-common-tasks.svg?style=flat-square
 
-[travis-url]: https://travis-ci.org/gulpjs/undertaker-common-tasks
-[travis-image]: http://img.shields.io/travis/gulpjs/undertaker-common-tasks.svg
+[ci-url]: https://github.com/gulpjs/undertaker-common-tasks/actions?query=workflow:dev
+[ci-image]: https://img.shields.io/github/workflow/status/gulpjs/undertaker-common-tasks/dev?style=flat-square
 
-[gitter-url]: https://gitter.im/gulpjs/gulp
-[gitter-image]: https://badges.gitter.im/gulpjs/gulp.png
+[coveralls-url]: https://coveralls.io/r/gulpjs/undertaker-common-tasks
+[coveralls-image]: https://img.shields.io/coveralls/gulpjs/undertaker-common-tasks.svg?style=flat-square
+<!-- prettier-ignore-start -->

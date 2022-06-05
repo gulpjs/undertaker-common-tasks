@@ -3,11 +3,13 @@
   "version": "1.0.1",
   "description": "Proof-of-concept custom registry that pre-defines tasks",
   "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
-  "contributors": [],
+  "contributors": [
+    "Blaine Bublitz <blaine.bublitz@gmail.com>"
+  ],
   "repository": "gulpjs/undertaker-common-tasks",
   "license": "MIT",
   "engines": {
-    "node": ">= 0.10"
+    "node": ">=10.13.0"
   },
   "main": "index.js",
   "files": [
@@ -15,20 +17,18 @@
     "index.js"
   ],
   "scripts": {
-    "lint": "eslint . && jscs index.js",
+    "lint": "eslint .",
     "test": "npm run lint"
   },
   "dependencies": {
-    "del": "^2.0.2",
+    "del": "^6.1.1",
     "ecstatic": "^2.0.0",
     "gulplog": "^1.0.0",
-    "undertaker-registry": "^1.0.0"
+    "undertaker-registry": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "^1.7.3",
-    "eslint-config-gulp": "^2.0.0",
-    "jscs": "^2.4.0",
-    "jscs-preset-gulp": "^1.0.0"
+    "eslint": "^7.32.0",
+    "eslint-config-gulp": "^5.0.1"
   },
   "keywords": [
     "common tasks",
