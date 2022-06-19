@@ -28,8 +28,8 @@ CommonRegistry.prototype.init = function init(taker) {
   var exists = fs.existsSync(buildDir);
 
   if (exists) {
-    throw new Error('Cannot initialize undertaker-common-tasks registry. '
-      + '`build/` directory exists.');
+    throw new Error('Cannot initialize undertaker-common-tasks registry. `' +
+      buildDir + '` directory exists.');
   }
 
   taker.task('clean', function() {
