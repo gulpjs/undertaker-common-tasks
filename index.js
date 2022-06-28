@@ -6,7 +6,7 @@ var util = require('util');
 
 var del = require('del');
 var logger = require('gulplog');
-var ecstatic = require('ecstatic');
+var st = require('st');
 var DefaultRegistry = require('undertaker-registry');
 
 function CommonRegistry(opts) {
@@ -28,18 +28,19 @@ CommonRegistry.prototype.init = function init(taker) {
   var exists = fs.existsSync(buildDir);
 
   if (exists) {
-    throw new Error('Cannot initialize undertaker-common-tasks registry. `' +
-      buildDir + '` directory exists.');
+    throw new Error(
+      'Cannot initialize undertaker-common-tasks registry. `' +
+        buildDir +
+        '` directory exists.'
+    );
   }
 
-  taker.task('clean', function() {
+  taker.task('clean', function () {
     return del([buildDir]);
   });
 
-  taker.task('serve', function(cb) {
-    http.createServer(
-      ecstatic({ root: buildDir })
-    ).listen(port, function() {
+  taker.task('serve', function (cb) {
+    http.createServer(st(buildDir)).listen(port, function () {
       logger.info('Server started at http://0.0.0.0:' + port);
       cb();
     });
