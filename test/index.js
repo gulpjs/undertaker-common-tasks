@@ -6,7 +6,18 @@ var http = require('http');
 
 var CommonRegistry = require('../');
 var DefaultRegistry = require('undertaker-registry');
-var Undertaker = require('undertaker');
+
+// Just fake an Undertaker
+function Undertaker() {
+  this.tasks = {};
+}
+Undertaker.prototype.task = function (name, fn) {
+  if (!fn) {
+    return this.tasks[name];
+  } else {
+    this.tasks[name] = fn;
+  }
+};
 
 describe('CommonRegistry', function () {
   describe('constructor', function () {
