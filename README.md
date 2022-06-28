@@ -30,21 +30,21 @@ Constructor for the registry. Pass an instance of this registry to `gulp.registr
 
 #### options
 
-* `port` - the port to start a static webserver on.
-* `buildDir` - the output directory (clean deletes this directory).
+- `port` - the port to start a static webserver on.
+- `buildDir` - the output directory (clean deletes this directory).
 
 ## License
 
 MIT
 
 <!-- prettier-ignore-start -->
+
 [downloads-image]: https://img.shields.io/npm/dm/undertaker-common-tasks.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/undertaker-common-tasks
 [npm-image]: https://img.shields.io/npm/v/undertaker-common-tasks.svg?style=flat-square
-
 [ci-url]: https://github.com/gulpjs/undertaker-common-tasks/actions?query=workflow:dev
 [ci-image]: https://img.shields.io/github/workflow/status/gulpjs/undertaker-common-tasks/dev?style=flat-square
-
 [coveralls-url]: https://coveralls.io/r/gulpjs/undertaker-common-tasks
 [coveralls-image]: https://img.shields.io/coveralls/gulpjs/undertaker-common-tasks.svg?style=flat-square
+
 <!-- prettier-ignore-start -->
