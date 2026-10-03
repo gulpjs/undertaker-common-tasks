@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-var expect = require('expect');
-var fs = require('fs');
-var http = require('http');
+var expect = require("expect");
+var fs = require("fs");
+var http = require("http");
 
-var CommonRegistry = require('../');
-var DefaultRegistry = require('undertaker-registry');
+var CommonRegistry = require("../");
+var DefaultRegistry = require("undertaker-registry");
 
 // Just fake an Undertaker
 function Undertaker() {
@@ -19,36 +19,36 @@ Undertaker.prototype.task = function (name, fn) {
   }
 };
 
-describe('CommonRegistry', function () {
-  describe('constructor', function () {
-    it('should be an instance of DefaultRegistry', function (done) {
+describe("CommonRegistry", function () {
+  describe("constructor", function () {
+    it("should be an instance of DefaultRegistry", function (done) {
       var registry = new CommonRegistry();
       expect(registry).toBeInstanceOf(DefaultRegistry);
       done();
     });
 
-    it('should set default config if argument is not specified', function (done) {
+    it("should set default config if argument is not specified", function (done) {
       var registry = new CommonRegistry();
       expect(registry.config).toEqual({
         port: 8080,
-        buildDir: './build',
+        buildDir: "./build",
       });
       done();
     });
 
-    it('should set specified config', function (done) {
-      var registry = new CommonRegistry({ port: 8081, buildDir: './foo' });
+    it("should set specified config", function (done) {
+      var registry = new CommonRegistry({ port: 8081, buildDir: "./foo" });
       expect(registry.config).toEqual({
         port: 8081,
-        buildDir: './foo',
+        buildDir: "./foo",
       });
       done();
     });
   });
 
-  describe('init', function () {
-    it('should throw an error if build dir already exist', function (done) {
-      var existingDir = './test/existing-dir';
+  describe("init", function () {
+    it("should throw an error if build dir already exist", function (done) {
+      var existingDir = "./test/existing-dir";
       try {
         fs.mkdirSync(existingDir);
 
@@ -57,10 +57,10 @@ describe('CommonRegistry', function () {
         expect(function () {
           registry.init(taker);
         }).toThrow(
-          'Cannot initialize undertaker-common-tasks registry. ' +
-            '`' +
+          "Cannot initialize undertaker-common-tasks registry. " +
+            "`" +
             existingDir +
-            '` directory exists.'
+            "` directory exists.",
         );
         done();
       } finally {
@@ -76,19 +76,19 @@ describe('CommonRegistry', function () {
         return server;
       };
 
-      var buildDir = './test/build';
+      var buildDir = "./test/build";
 
       var taker = new Undertaker();
       var registry = new CommonRegistry({ buildDir: buildDir });
       registry.init(taker);
 
-      taker.task('serve')(function () {
+      taker.task("serve")(function () {
         server.close(done);
       });
     });
 
     it("contains working task: 'clean'", function () {
-      var buildDir = './test/build';
+      var buildDir = "./test/build";
 
       var taker = new Undertaker();
       var registry = new CommonRegistry({ buildDir: buildDir });
@@ -96,7 +96,7 @@ describe('CommonRegistry', function () {
 
       fs.mkdirSync(buildDir);
       return taker
-        .task('clean')()
+        .task("clean")()
         .then(function () {
           expect(fs.existsSync(buildDir)).toEqual(false);
         });

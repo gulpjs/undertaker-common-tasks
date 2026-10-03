@@ -13,13 +13,13 @@ Proof-of-concept custom registry that pre-defines tasks.
 ## Example
 
 ```js
-var gulp = require('gulp');
-var CommonTasks = require('undertaker-common-tasks');
+var gulp = require("gulp");
+var CommonTasks = require("undertaker-common-tasks");
 
-gulp.registry(new CommonTasks({ port: 1337, buildDir: './dist' }));
+gulp.registry(new CommonTasks({ port: 1337, buildDir: "./dist" }));
 
 // 'clean' & 'series' were defined by the registry
-gulp.task('default', gulp.series('clean', 'serve'));
+gulp.task("default", gulp.series("clean", "serve"));
 ```
 
 ## API
