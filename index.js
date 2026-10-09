@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-var fs = require('fs');
-var http = require('http');
-var util = require('util');
+var fs = require("fs");
+var http = require("http");
+var util = require("util");
 
-var del = require('del');
-var logger = require('gulplog');
-var st = require('st');
-var DefaultRegistry = require('undertaker-registry');
+var del = require("del");
+var logger = require("gulplog");
+var st = require("st");
+var DefaultRegistry = require("undertaker-registry");
 
 function CommonRegistry(opts) {
   DefaultRegistry.call(this);
@@ -16,7 +16,7 @@ function CommonRegistry(opts) {
 
   this.config = {
     port: opts.port || 8080,
-    buildDir: opts.buildDir || './build',
+    buildDir: opts.buildDir || "./build",
   };
 }
 
@@ -29,19 +29,19 @@ CommonRegistry.prototype.init = function init(taker) {
 
   if (exists) {
     throw new Error(
-      'Cannot initialize undertaker-common-tasks registry. `' +
+      "Cannot initialize undertaker-common-tasks registry. `" +
         buildDir +
-        '` directory exists.'
+        "` directory exists.",
     );
   }
 
-  taker.task('clean', function () {
+  taker.task("clean", function () {
     return del([buildDir]);
   });
 
-  taker.task('serve', function (cb) {
+  taker.task("serve", function (cb) {
     http.createServer(st(buildDir)).listen(port, function () {
-      logger.info('Server started at http://0.0.0.0:' + port);
+      logger.info("Server started at http://0.0.0.0:" + port);
       cb();
     });
   });

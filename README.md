@@ -13,13 +13,13 @@ Proof-of-concept custom registry that pre-defines tasks.
 ## Example
 
 ```js
-var gulp = require('gulp');
-var CommonTasks = require('undertaker-common-tasks');
+var gulp = require("gulp");
+var CommonTasks = require("undertaker-common-tasks");
 
-gulp.registry(new CommonTasks({ port: 1337, buildDir: './dist' }));
+gulp.registry(new CommonTasks({ port: 1337, buildDir: "./dist" }));
 
 // 'clean' & 'series' were defined by the registry
-gulp.task('default', gulp.series('clean', 'serve'));
+gulp.task("default", gulp.series("clean", "serve"));
 ```
 
 ## API
@@ -33,18 +33,28 @@ Constructor for the registry. Pass an instance of this registry to `gulp.registr
 - `port` - the port to start a static webserver on.
 - `buildDir` - the output directory (clean deletes this directory).
 
+## Strict No LLM / No AI Policy
+
+No LLMs for issues.
+
+No LLMs for patches / pull requests.
+
+No LLMs for comments on the bug tracker, including translation.
+
+English is encouraged, but not required. You are welcome to post in your native language and rely on others to have their own translation tools of choice to interpret your words.
+
 ## License
 
 MIT
 
 <!-- prettier-ignore-start -->
-
 [downloads-image]: https://img.shields.io/npm/dm/undertaker-common-tasks.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/undertaker-common-tasks
 [npm-image]: https://img.shields.io/npm/v/undertaker-common-tasks.svg?style=flat-square
-[ci-url]: https://github.com/gulpjs/undertaker-common-tasks/actions?query=workflow:dev
-[ci-image]: https://img.shields.io/github/actions/workflow/status/gulpjs/undertaker-common-tasks/dev.yml?branch=master&style=flat-square
-[coveralls-url]: https://coveralls.io/r/gulpjs/undertaker-common-tasks
-[coveralls-image]: https://img.shields.io/coveralls/gulpjs/undertaker-common-tasks.svg?style=flat-square
 
-<!-- prettier-ignore-start -->
+[ci-url]: https://github.com/gulpjs/undertaker-common-tasks/actions/workflows/dev.yml
+[ci-image]: https://img.shields.io/github/actions/workflow/status/gulpjs/undertaker-common-tasks/dev.yml?style=flat-square
+
+[coveralls-url]: https://coveralls.io/r/gulpjs/undertaker-common-tasks
+[coveralls-image]: https://img.shields.io/coveralls/gulpjs/undertaker-common-tasks/main.svg?style=flat-square
+<!-- prettier-ignore-end -->
