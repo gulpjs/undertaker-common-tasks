@@ -52,7 +52,7 @@ describe("CommonRegistry", function () {
 
         var taker = new Undertaker();
         var registry = new CommonRegistry({ buildDir: existingDir });
-        const msg =
+        var msg =
           "Cannot initialize undertaker-common-tasks registry. " +
           "`" +
           existingDir +
