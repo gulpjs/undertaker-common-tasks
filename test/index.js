@@ -24,7 +24,7 @@ describe("CommonRegistry", function () {
   describe("constructor", function () {
     it("should be an instance of DefaultRegistry", function () {
       var registry = new CommonRegistry();
-      assert.ok(registry, DefaultRegistry);
+      assert.ok(registry instanceof DefaultRegistry);
     });
 
     it("should set default config if argument is not specified", function () {
